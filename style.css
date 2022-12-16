@@ -1,0 +1,64 @@
+
+    body {
+        background: linear-gradient(347deg, #000000 0%, #252525 100%);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .centered-box{
+        width: 600px;
+        height: 300px;
+        max-width: 75vw;
+        max-height: 75vh;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .centered-box div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .centered-box h3 {
+        font-size: 24px;
+    }
+    .centered-box p {
+        font-size: 14px;
+        margin: 20px 20px;
+    }
+    .centered-box h3, .centered-box p {
+        color: #fff;
+        text-align: justify;
+        max-width: 500px;
+    }
+    .centered-box div.buttons{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+    }
+    .buttons button {
+        background: transparent;
+        border-radius: 15px;
+        padding: 10px;
+        width: 150px;
+        outline: none;
+        color: #fff;
+        border: solid 2px #fff;
+        cursor: pointer;
+    }
+    .centered-box hr {
+        width: 100%;
+    }
+    button:disabled {
+        opacity: .5;
+    }
+    .glass {
+        background: rgba(255, 255, 255, 0.28);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(8.5px);
+        -webkit-backdrop-filter: blur(8.5px);
+    }
