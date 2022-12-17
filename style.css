@@ -17,6 +17,7 @@ body {
     z-index: -1;
     background-color: #181816;
     padding: 0px;
+    width: 100vw;
 }
 
 body>svg {
@@ -89,8 +90,6 @@ section#discord {
 
 section#discord p {
     margin: 0px;
-    opacity: 0;
-    transform: translateX(-50px);
     color: #000;
     font-size: 50px;
     font-weight: bold;
@@ -102,21 +101,15 @@ section#discord p {
     -webkit-transition: all 0.3s 0.25;
 }
 
-section#discord:hover p {
-    opacity: 1;
-    transform: translateX(0px);
+.reveal > * {
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s all ease;
+    transition-delay: 1s;
 }
 
-section#discord iframe {
-    opacity: .75;
-    transform: translateX(0px);
-    transition: all 0.3s 0.25s;
-    -moz-transition: all 0.3s 0.25s;
-    -ms-transition: all, 0.3s, 0.25s;
-    -webkit-transition: all 0.3s 0.25;
-}
-
-section#discord:hover iframe {
+.reveal.active > * {
+    transform: translateY(0);
     opacity: 1;
-    transform: translateX(-100px);
 }

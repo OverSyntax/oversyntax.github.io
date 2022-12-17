@@ -1,4 +1,4 @@
-const t = 500
+const t = 750
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -31,20 +31,38 @@ load = async function () {
             strokeWidth: 25
         });
         circ.animate({
-            r: Math.max(parseInt(height/1.75), parseInt(width/1.75))
+            r: Math.max(parseInt(height / 1.75), parseInt(width / 1.75))
         }, t);
         await sleep(t)
         circ.remove()
     }
     circulo.animate({
-        r: Math.max(parseInt(height/1.75), parseInt(width/1.75))
+        r: Math.max(parseInt(height / 1.75), parseInt(width / 1.75))
     }, t)
-    return new Promise(resolve => setTimeout(resolve, t+200))
+    return new Promise(resolve => setTimeout(resolve, t + 200))
+}
+
+function reveal() {
+    console.log("works")
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        } else {
+            reveals[i].classList.remove("active");
+        }
+    }
 }
 
 async function start() {
     await load()
+    reveal()
+    window.addEventListener("scroll", reveal);
     document.querySelector("body").removeChild(document.querySelector("body > svg"))
     document.querySelector("body").classList.remove("locked")
     console.log("Cargado")
 }
+
