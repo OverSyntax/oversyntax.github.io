@@ -18,6 +18,7 @@ body {
     background-color: #181816;
     padding: 0px;
     width: 100vw;
+    scroll-behavior: smooth;
 }
 
 body>svg {
@@ -38,7 +39,7 @@ body>svg {
 section#title {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 50vh;
     max-height: 100vh;
     overflow: hidden;
     overflow-x: hidden;
@@ -48,7 +49,7 @@ section#title {
 section#title>div {
     position: relative;
     left: 60px;
-    top: 60vh;
+    top: 30vh;
 }
 
 section#title h3 {
@@ -71,32 +72,114 @@ section#title p {
 }
 
 #logo {
-    height: 160vmin;
+    height: 80vmin;
     position: absolute;
-    left: 40vw;
+    left: 70vw;
     top: -15vh;
     opacity: .5;
     filter: blur(12px);
 }
 
-section#discord {
+section#contact {
     position: relative;
     padding: 120px 60px;
     background: #f5f5f5;
     font-family: whitney;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
 }
 
-section#discord p {
+section#contact > * {
+    width: 100%;
+}
+
+section#contact > form {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+
+#contact label {
+    cursor: pointer;
+}
+
+#contact .column{
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#contact .inline {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+#contact label.obligatorio p::after {
+    content: "*";
+    color: #FE1800;
+    font-weight: bold;
+    margin: 5px;
+}
+
+#contact textarea, input[type="text"], input[type="email"]{
+    border: 2px solid #181816;
+    border-radius: 5px;
+    background-color: transparent;
+    height: 40px;
+    color: #181816;
+    outline: none;
+    transition: all 0.25s;
+    padding: 10px;
+}
+
+#contact textarea.incorrect, input[type="text"].incorrect, input[type="email"].incorrect {
+    background-color: #FE180050;
+}
+
+#contact textarea:focus, input[type="text"]:focus, input[type="email"]:focus{
+    background-color: #181816;
+    color: #fff
+}
+
+#contact textarea {
+    resize: vertical;
+    min-height: 75px;
+    font-family: whitney;
+}
+
+section#contact > form > div > p {
     margin: 0px;
     color: #000;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
     text-transform: uppercase;
     width: 75%;
+}
+
+#contact > form .submit {
+    background-color: #181816;
+    width: 100%;
+    max-width: 660px;
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff
+}
+
+#contact > form button[type="submit"] {
+    background-color: transparent;
+    border: 2px solid transparent;
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    color: #181816;
+    background-color: #fff;
+}
+
+a {
+    color: #fff
 }
 
 .reveal.fade > * {
@@ -104,7 +187,6 @@ section#discord p {
     transform: translateY(100px) ;
     opacity: 0;
     transition: 1s all ease;
-    transition-delay: 0.1s;
 }
 
 .reveal.fade.active > * {
@@ -124,10 +206,10 @@ section#discord p {
     section#title>div {
         position: relative;
         left: 10px;
-        top: 60vh;
+        top: 25vh;
     }
     section#title h3 {
-        font-size: 80px;
+        font-size: 50px;
         text-align: center;
         width: calc(100vw - 20px);
     }
