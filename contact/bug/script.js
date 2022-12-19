@@ -2,7 +2,7 @@ async function submit(){
     var name = document.getElementById("nameInput").value
     var mail = document.getElementById("emailInput").value
     var msg = document.getElementById("descriptionInput").value
-    var chk = document.getElementById("verifyNotifications").value
+    var chk = document.getElementById("verifyNotifications").checked
     return reportBug(name, mail, msg, chk)
 }
 
