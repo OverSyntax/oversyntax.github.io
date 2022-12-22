@@ -1,0 +1,219 @@
+<head>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99715444-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-99715444-2');
+    </script>
+
+    <!--  Etiquetas meta  -->
+    <meta charset="UTF-8">
+    <!--meta http-equiv="refresh" content="url=http://oversyntax.github.io/404" /-->
+
+    <!--  SEO meta  -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oversyntax.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="OverSyntax">
+    <meta property="og:keywords" content="oversyntax">
+    <link rel="canonical" href="https://oversyntax.github.io/">
+    <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <!--  Ajustes meta  -->
+    <meta property="og:locale" content="es-ES">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--  Enlaces  -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!--  Scripts  -->
+    <script src="../../script.js"></script>
+    <script src="./script.js"></script>
+    <script src="../../Snap.svg/dist/snap.svg-min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!--  Título  -->
+    <title>Over Syntax</title>
+
+</head>
+
+<body id="body" class="locked" onload="">
+    <script>
+        start()
+    </script>
+    <header id="header"></header>
+    <div id="windows"></div>
+    <section id="title">
+        <img id="logo" src="../../media/oversyntax_logo.jpg">
+        <div>
+            <h3>AJUSTES</h3>
+        </div>
+    </section>
+    <section class="container">
+        <section class="settings" id="look">
+            <h3>Apariencia</h3>
+            <div>
+                <h2>Recursos</h2>
+                <label>
+                    <p>Forzar posibilidad para bajos recursos<br><span>¿Tu dispositivo no puede cargar las animaciones?<br>Activa este modo y reduciremos en la medida de lo posible el uso de la memoria</span></p>
+                    <input type="checkbox" id="bajosRecursos">
+                </label>
+            </div>
+            <div>
+                <h2>Loader</h2>
+                <label>
+                    <p>Mostrar loader al cargar</p>
+                    <input type="checkbox" id="loader">
+                </label>
+                <label class="child">
+                    <p>Mostrar loader en todas las páginas<br><span>El loader sólo se mostrará en la página de inicio</span></p>
+                    <input type="checkbox" id="loaderEverywhere">
+                </label>
+            </div>
+        </section>
+        <section class="settings" id="notificaciones">
+            <h3>Notificaciones</h3>
+            <div>
+                <h2>Ajustes generales</h2>
+                <div>
+                    <label>
+                        <p>Mostrar notificaciones<br><span>Las notificaciones sólo serán mostradas mientras el usuario se encuentre utilizando los servicios</span></p>
+                        <input type="checkbox" id="enableNotifications" disabled title="Esta opción es controlada a través de las notificaciones de su navegador web">
+                    </label>
+                    <label class="child">
+                        <p>Notificaciones en la página<br><span>
+                            Al activar esta opción las notificaciones se mostrarán en la propia página y no en la barra de notificaciones
+                        </span></p>
+                        <input type="checkbox" id="pageNotifications">
+                    </label>
+                </div>
+            </div>
+            <div>
+                <h2>Categorías</h2>
+                <div>
+                    <label>
+                        <p>Actualizaciones<br><span>Al acceder mostrará una notificación con las actualizaciones realizadas en los servicios</span></p>
+                        <input type="checkbox" id="notificationsActualitations">
+                    </label>
+                    <label>
+                        <p>Novedades<br><span>Al acceder mostrará una notificación con los nuevos servicios disponibles</span></p>
+                        <input type="checkbox" id="notificationsNews">
+                    </label>
+                    <label>
+                        <p>Errores<br><span>Se mostrará en una notificación los diferentes errores detectados en la página</span></p>
+                        <input type="checkbox" id="notificationsBugs">
+                    </label>
+                </div>
+            </div>
+        </section>
+        <section class="settings" id="privacy">
+            <h3>Privacidad</h3>
+            <div>
+                <h2>Datos que hemos recogido</h2>
+                <label>
+                    <p>Nombre:</p>
+                    <input type="text" readonly id="userName">
+                </label>
+                <label>
+                    <p>Edad:</p>
+                    <input type="number" readonly id="userAge">
+                </label>
+                <label>
+                    <p>Correo electrónico:</p>
+                    <input type="email" readonly id="userMail">
+                </label>
+                <label>
+                    <p>Nacionalidad:</p>
+                    <input type="text" readonly id="userCountry">
+                </label>
+                <label>
+                    <p>Borrar todos los datos<br><span>
+                        No se eliminarán los datos introducidos en los formularios de contacto que ya se hayan enviado.</span></p>
+                    <button id="clearUserData">Borrar</button>
+                </label>
+            </div>
+            <div>
+                <h2>Datos que recogemos automáticamente</h2>
+                <label>
+                    <p>Informe de errores</p>
+                    <input type="checkbox" id="bugData">
+                </label>
+                <label>
+                    <p>Estadísticas de uso</p>
+                    <input type="checkbox" id="statsData">
+                </label>
+                <label>
+                    <p>Datos personales introducidos en las herramientas<br>
+                        <span>
+                            Existe un reducido número de herramientas en las que puede o debe introducir algún dato personal.
+                            Con esta opción activa, esos datos se guardarán para reconocerle, ayudarle e identificarle en caso
+                            de que fuese necesario en el futuro.
+                        </span>
+                    </p>
+                    <input type="checkbox" id="userData">
+                </label>
+                <label>
+                    <p>Historial de navegación en la página</p>
+                    <input type="checkbox" id="historyData">
+                </label>
+            </div>
+        </section>
+        <section class="settings" id="advanced">
+            <h3>Avanzado</h3>
+            <div>
+                <h2>Desarrollador</h2>
+                <div>
+                    <label>
+                        <p>Modo desarrollador</p>
+                        <input type="checkbox" id="developerMode">
+                    </label>
+                    <label class="child">
+                        <p>Habilitar selección</p>
+                        <input type="checkbox" id="enableSelection">
+                    </label>
+                    <label class="child">
+                        <p>Habilitar click derecho</p>
+                        <input type="checkbox" id="enableRightClick">
+                    </label>
+                </div>
+            </div>
+            <div>
+                <h2>Diseño</h2>
+                <div>
+                    <label>
+                        <p>Modo diseñador</p>
+                        <input type="checkbox" id="enableDesignerMode">
+                    </label>
+                    <label class="child">
+                        <p>Mostrar bordes</p>
+                        <input type="checkbox" id="enableBorders">
+                    </label>
+                    <label class="child">
+                        <p>Forzar modo para teléfono</p>
+                        <input type="checkbox" id="enablePhoneMode">
+                    </label>
+                </div>
+            </div>
+            <!--
+            <div>
+                <h2>Códigos</h2>
+                <div>
+                    <label>
+                        <form>
+                            <input type="text">
+                            <button type="submit">Añadir</button>
+                        </form>
+                    </label>
+                </div>
+            </div>
+            -->
+        </section>
+    </section>
+</body>
+<script>
+    startSettings()
+</script>

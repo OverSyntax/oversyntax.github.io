@@ -84,10 +84,10 @@
                     <input id="verifyNotifications" type="checkbox"><p>Acepto recibir información sobre el estado de solución del error reportado</p>
                 </label>
                 <label class="inline obligatorio">
-                    <input required id="verifyTos" type="checkbox"><p>Acepto haber leído y cumplir los <a target="_blank" href="https:/oversyntax.github.io/legal/tos">términos y condiciones de servicio</a></p>
+                    <input required id="verifyTos" type="checkbox"><p>Acepto haber leído y cumplir los <a target="_blank" href="../../legal/tos">términos y condiciones de servicio</a></p>
                 </label>
                 <label class="inline obligatorio">
-                    <input required id="verifyPrivacy" type="checkbox"><p>Acepto haber leído la vigente <a href="https://oversyntax.github.io/legal/privacy">política de privacidad</a></p>
+                    <input required id="verifyPrivacy" type="checkbox"><p>Acepto haber leído la vigente <a target="_blank" href="../../legal/privacy">política de privacidad</a></p>
                 </label>
                 <button type="submit">Enviar</button>
             </div>
@@ -111,6 +111,9 @@
                 await submit()
                 window.location.reload()
             })
+            if (!window.confirm("La página se encuentra en desarrollo y ninguna de sus funcionalidades está activa.\n¿Desea acceder de todas formas?")) {
+                window.location = "https://oversyntax.github.io"
+            }
         </script>
     </section>
 </body>

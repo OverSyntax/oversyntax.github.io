@@ -51,7 +51,6 @@ function startRevealAnimations() {
 }
 
 function fade() {
-    console.log("works")
     var reveals = document.querySelectorAll(".reveal.fade");
     for (var i = 0; i < reveals.length; i++) {
         var windowHeight = window.innerHeight;
@@ -71,69 +70,4 @@ async function start() {
     window.addEventListener("scroll", startRevealAnimations);
     document.querySelector("body").removeChild(document.querySelector("body > svg"))
     document.querySelector("body").classList.remove("locked")
-    console.log("Cargado")
 }
-
-const webhooks = {
-    report: "https://discord.com/api/webhooks/1054410575020560464/tYsBbsfnM5k0AUm6Jvav2DBcCzLTlSx5YdqBm4IoNOlyCH5d74lZnIePbuSNzXOQV6sC"
-}
-
-/*
-function sendToWebhook(type, data, mentionUsers, mentionRoles){
-    data.mentions = []
-    if (mentionUsers) data.mentions.push("users")
-    if (mentionRoles) data.mentions.push("roles")
-    fetch(
-        'https://discord.com/api/webhooks/1054410575020560464/tYsBbsfnM5k0AUm6Jvav2DBcCzLTlSx5YdqBm4IoNOlyCH5d74lZnIePbuSNzXOQV6sC',
-        {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                username: data.username,
-                avatar_url: data.avatar_url,
-                content: data.contet,
-                allowed_mentions: {
-                    parse: data.mentions,
-                },
-                embeds: [
-                    {
-                        color: 11730954,
-                        author: {
-                            name: 'dragonwocky',
-                            url: 'https://dragonwocky.me/',
-                            icon_url: 'https://dragonwocky.me/assets/avatar.jpg',
-                        },
-                        title: 'title',
-                        url:
-                            'https://gist.github.com/dragonwocky/ea61c8d21db17913a43da92efe0de634',
-                        thumbnail: {
-                            url:
-                                'https://cdn.discordapp.com/avatars/411256446638882837/9a12fc7810795ded801fdb0401db0be6.png',
-                        },
-                        description: 'description',
-                        fields: [
-                            {
-                                name: 'field 1',
-                                value: 'value',
-                            },
-                            {
-                                name: 'field 2',
-                                value: 'other value',
-                            },
-                        ],
-                        image: {
-                            url: data.image.url,
-                        },
-                        footer: {
-                            text: data.footer.text,
-                            icon_url: data.footer.icon_url,
-                        },
-                    },
-                ],
-            }),
-        }
-    );
-}
-*/

@@ -7,6 +7,9 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-99715444-2');
+        if (!window.confirm("La página se encuentra en desarrollo y ninguna de sus funcionalidades está activa.\n¿Desea acceder de todas formas?")) {
+            window.location = "https://oversyntax.github.io"
+        }
     </script>
 
     <!--  Etiquetas meta  -->
@@ -54,6 +57,29 @@
         </div>
     </section>
     <section id="text">
-        <p>Estamos trabajando en esto...</p>
+        <div>
+            <h3>Información que recogemos</h3>
+            <p>
+                Recogemos cierta información cuando interactúas con determinadas herramientas de la página web y/o comunidad
+                de Discord. Esto incluye información que tú nos proporcionas e información generada de forma automática.
+            </p>
+            <h2>Información que nos proporcionas.</h2>
+            <p>
+                Usted nos proporciona información a través de diferentes formularios de contacto. La información
+                introducida en ellos es gestionada por un reducido número de personas seleccionadas para el
+                procesamiento de datos. Esta información se protege y mantiene en privado con el fin de garantizar
+                el anonimato del usuario.<br>
+                Puedes personalizar la información que quieres que recaudemos de ti en la <a target="_blank" href="../../settings#privacy">página de ajustes de privacidad</a>.
+            </p>
+            <h2>Información que recogemos automáticamente.</h2>
+            <p>
+                Al utilizar nuestros servicios y herramientas como cliente nos proporciona de forma automática información.
+                La información recogida son estadísticas de funcionamiento, información de errores y otros datos con el fin
+                de facilitar la labor de desarrollo y mejora de las herramientas. Toda esta información es confidencial y
+                anónima.<br>
+                Puedes personalizar la información que quieres que recaudemos de forma automática en la <a target="_blank" href="../../settings#privacy">página de ajustes de privacidad</a>.
+            </p>
+        </div>
+        <p>SYNTAXERROR SE RESERVA EL DERECHO DE MODIFICAR ESTE DOCUMENTO SIN INFORMAR DE ELLO A LOS USUARIOS AFECTADOS</p>
     </section>
 </body>
