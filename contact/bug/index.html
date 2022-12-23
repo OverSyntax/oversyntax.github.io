@@ -100,24 +100,12 @@
             </div>
         </form>
         <script type="module">
-            import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
-
-            const octokit = new Octokit({
-                auth: 'YOUR-TOKEN'
-            })
-
-            await octokit.request('GET /repos/OverSyntax/oversyntax.github.io/actions/secrets/BUG_REPORT_WEBHOOK', {
-                owner: 'OWNER',
-                repo: 'REPO',
-                secret_name: 'SECRET_NAME'
-            })
-
             async function submit() {
                 var name = document.getElementById("nameInput").value
                 var mail = document.getElementById("emailInput").value
                 var msg = document.getElementById("descriptionInput").value
                 var chk = document.getElementById("verifyNotifications").checked
-                return reportBug(name, mail, msg, chk, tkn)
+                return reportBug(name, mail, msg, chk)
             }
 
             window.scrollTo(0, 0)
