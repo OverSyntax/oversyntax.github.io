@@ -1,14 +1,6 @@
-async function submit(){
-    var name = document.getElementById("nameInput").value
-    var mail = document.getElementById("emailInput").value
-    var msg = document.getElementById("descriptionInput").value
-    var chk = document.getElementById("verifyNotifications").checked
-    return reportBug(name, mail, msg, chk)
-}
-
-async function reportBug(name, mail, msg, chk) {
+async function reportBug(name, mail, msg, chk, tkn) {
     await fetch(
-        'https://discord.com/api/webhooks/1054410575020560464/tYsBbsfnM5k0AUm6Jvav2DBcCzLTlSx5YdqBm4IoNOlyCH5d74lZnIePbuSNzXOQV6sC',
+        "",
         {
             method: 'post',
             headers: {

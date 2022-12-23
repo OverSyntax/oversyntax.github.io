@@ -1,12 +1,31 @@
 const objetos = function (name) { return document.querySelectorAll(name) }
 
 function startSettings() {
-    const elements = objetos("input[type=\"checkbox\"]")
-    elements.forEach(element => {
-        element.addEventListener("change", function(){
-            data.establecer(element.id, element.checked)
+    const checks = objetos("input[type=\"checkbox\"]")
+    checks.forEach(check => {
+        check.addEventListener("change", function(){
+            data.establecer(`settings.chk.${check.id}`, check.checked)
+        })
+        if(data.existe(check.id)) {
+            check.checked = data.obtener(`settings.chk.${check.id}`)=="true"?true:false
+        } else {
+            data.establecer(`settings.chk.${check.id}`, check.checked)
+        }
+    })
+    const texts = objetos("input[type=\"text\"], input[type=\"number\"], input[type=\"email\"], input[type=\"password\"]")
+    console.log(data.table())
+    texts.forEach(text => {
+        if(data.existe(text.id)) {
+            text.value = data.obtener(`settings.txt.${text.id}`)=="true"?true:false
+        } else {
+            data.establecer(`settings.txt.${text.id}`, "")
+        }
+        text.addEventListener("change", function(){
+            data.establecer(`settings.txt.${text.id}`, text.value)
         })
     })
+    console.log(texts)
+
     if (!window.confirm("La página se encuentra en desarrollo y ninguna de sus funcionalidades está activa.\n¿Desea acceder de todas formas?")) {
         window.location = "https://oversyntax.github.io"
     }

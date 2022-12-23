@@ -63,14 +63,16 @@
                 </label>
                 <label class="obligatorio column">
                     <p>E-mail</p>
-                    <input minlength="5" required id="emailInput" type="email" autocomplete="email" placeholder="email@email.com">
+                    <input minlength="5" required id="emailInput" type="email" autocomplete="email"
+                        placeholder="email@email.com">
                 </label>
             </div>
             <div class="reveal fade">
                 <p>Error detectado</p>
                 <label class="obligatorio column">
                     <p>Descripción del error</p>
-                    <textarea minlength="10" maxlength="1000" required id="descriptionInput" placeholder="Las animaciones de la página de inicio se mueven de forma irregular"></textarea>
+                    <textarea minlength="10" maxlength="1000" required id="descriptionInput"
+                        placeholder="Las animaciones de la página de inicio se mueven de forma irregular"></textarea>
                 </label>
                 <!--
                 <label class="column">
@@ -81,18 +83,43 @@
             </div>
             <div class="submit column">
                 <label class="inline">
-                    <input id="verifyNotifications" type="checkbox"><p>Acepto recibir información sobre el estado de solución del error reportado</p>
+                    <input id="verifyNotifications" type="checkbox">
+                    <p>Acepto recibir información sobre el estado de solución del error reportado</p>
                 </label>
                 <label class="inline obligatorio">
-                    <input required id="verifyTos" type="checkbox"><p>Acepto haber leído y cumplir los <a target="_blank" href="../../legal/tos">términos y condiciones de servicio</a></p>
+                    <input required id="verifyTos" type="checkbox">
+                    <p>Acepto haber leído y cumplir los <a target="_blank" href="../../legal/tos">términos y condiciones
+                            de servicio</a></p>
                 </label>
                 <label class="inline obligatorio">
-                    <input required id="verifyPrivacy" type="checkbox"><p>Acepto haber leído la vigente <a target="_blank" href="../../legal/privacy">política de privacidad</a></p>
+                    <input required id="verifyPrivacy" type="checkbox">
+                    <p>Acepto haber leído la vigente <a target="_blank" href="../../legal/privacy">política de
+                            privacidad</a></p>
                 </label>
                 <button type="submit">Enviar</button>
             </div>
         </form>
-        <script>
+        <script type="module">
+            import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+
+            const octokit = new Octokit({
+                auth: 'YOUR-TOKEN'
+            })
+
+            await octokit.request('GET /repos/OverSyntax/oversyntax.github.io/actions/secrets/BUG_REPORT_WEBHOOK', {
+                owner: 'OWNER',
+                repo: 'REPO',
+                secret_name: 'SECRET_NAME'
+            })
+
+            async function submit() {
+                var name = document.getElementById("nameInput").value
+                var mail = document.getElementById("emailInput").value
+                var msg = document.getElementById("descriptionInput").value
+                var chk = document.getElementById("verifyNotifications").checked
+                return reportBug(name, mail, msg, chk, tkn)
+            }
+
             window.scrollTo(0, 0)
             document.querySelectorAll("input").forEach(input => {
                 if (input.type == "checkbox") {
@@ -105,9 +132,9 @@
                 textarea.value = ""
             })
             var form = document.querySelector("form");
-            function handleForm(event) { event.preventDefault(); } 
+            function handleForm(event) { event.preventDefault(); }
             form.addEventListener('submit', handleForm);
-            form.addEventListener("submit", async function(){
+            form.addEventListener("submit", async function () {
                 await submit()
                 window.location.reload()
             })
