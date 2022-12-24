@@ -29,9 +29,10 @@
 
     <!--  Enlaces  -->
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../css/general.css">
 
     <!--  Scripts  -->
-    <script src="../../script.js"></script>
+    <script src="../script.js"></script>
     <script src="./script.js"></script>
     <script src="../../Snap.svg/dist/snap.svg-min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -59,7 +60,9 @@
             <div>
                 <h2>Recursos</h2>
                 <label>
-                    <p>Forzar posibilidad para bajos recursos<br><span>¿Tu dispositivo no puede cargar las animaciones?<br>Activa este modo y reduciremos en la medida de lo posible el uso de la memoria</span></p>
+                    <p>Forzar posibilidad para bajos recursos<br><span>¿Tu dispositivo no puede cargar las
+                            animaciones?<br>Activa este modo y reduciremos en la medida de lo posible el uso de la
+                            memoria</span></p>
                     <input type="checkbox" id="bajosRecursos">
                 </label>
             </div>
@@ -67,10 +70,11 @@
                 <h2>Loader</h2>
                 <label>
                     <p>Mostrar loader al cargar</p>
-                    <input type="checkbox" id="loader">
+                    <input type="checkbox" id="loader" checked>
                 </label>
-                <label class="child">
-                    <p>Mostrar loader en todas las páginas<br><span>El loader sólo se mostrará en la página de inicio</span></p>
+                <label class="child loader_child">
+                    <p>Mostrar loader en todas las páginas<br><span>El loader sólo se mostrará en la página de
+                            inicio</span></p>
                     <input type="checkbox" id="loaderEverywhere">
                 </label>
             </div>
@@ -81,13 +85,15 @@
                 <h2>Ajustes generales</h2>
                 <div>
                     <label>
-                        <p>Mostrar notificaciones<br><span>Las notificaciones sólo serán mostradas mientras el usuario se encuentre utilizando los servicios</span></p>
-                        <input type="checkbox" id="enableNotifications" disabled title="Esta opción es controlada a través de las notificaciones de su navegador web">
+                        <p>Mostrar notificaciones<br><span>Las notificaciones sólo serán mostradas mientras el usuario
+                                se encuentre utilizando los servicios</span></p>
+                        <input type="checkbox" id="enableNotifications">
                     </label>
-                    <label class="child">
+                    <label class="child enableNotifications_child">
                         <p>Notificaciones en la página<br><span>
-                            Al activar esta opción las notificaciones se mostrarán en la propia página y no en la barra de notificaciones
-                        </span></p>
+                                Al activar esta opción las notificaciones se mostrarán en la propia página y no en la
+                                barra de notificaciones
+                            </span></p>
                         <input type="checkbox" id="pageNotifications">
                     </label>
                 </div>
@@ -96,15 +102,18 @@
                 <h2>Categorías</h2>
                 <div>
                     <label>
-                        <p>Actualizaciones<br><span>Al acceder mostrará una notificación con las actualizaciones realizadas en los servicios</span></p>
+                        <p>Actualizaciones<br><span>Al acceder mostrará una notificación con las actualizaciones
+                                realizadas en los servicios</span></p>
                         <input type="checkbox" id="notificationsActualitations">
                     </label>
                     <label>
-                        <p>Novedades<br><span>Al acceder mostrará una notificación con los nuevos servicios disponibles</span></p>
+                        <p>Novedades<br><span>Al acceder mostrará una notificación con los nuevos servicios
+                                disponibles</span></p>
                         <input type="checkbox" id="notificationsNews">
                     </label>
                     <label>
-                        <p>Errores<br><span>Se mostrará en una notificación los diferentes errores detectados en la página</span></p>
+                        <p>Errores<br><span>Se mostrará en una notificación los diferentes errores detectados en la
+                                página</span></p>
                         <input type="checkbox" id="notificationsBugs">
                     </label>
                 </div>
@@ -131,8 +140,7 @@
                     <input type="text" disabled id="userCountry">
                 </label>
                 <label>
-                    <p>Borrar todos los datos<br><span>
-                        No se eliminarán los datos introducidos en los formularios de contacto que ya se hayan enviado.</span></p>
+                    <p>Borrar todos los datos<br></p>
                     <button id="clearUserData">Borrar</button>
                 </label>
             </div>
@@ -140,25 +148,27 @@
                 <h2>Datos que recogemos automáticamente</h2>
                 <label>
                     <p>Informe de errores</p>
-                    <input type="checkbox" id="bugData">
+                    <input type="checkbox" id="bugData" checked>
                 </label>
                 <label>
                     <p>Estadísticas de uso</p>
-                    <input type="checkbox" id="statsData">
+                    <input type="checkbox" id="statsData" checked>
                 </label>
                 <label>
                     <p>Datos personales introducidos en las herramientas<br>
                         <span>
-                            Existe un reducido número de herramientas en las que puede o debe introducir algún dato personal.
-                            Con esta opción activa, esos datos se guardarán para reconocerle, ayudarle e identificarle en caso
+                            Existe un reducido número de herramientas en las que puede o debe introducir algún dato
+                            personal.
+                            Con esta opción activa, esos datos se guardarán para reconocerle, ayudarle e identificarle
+                            en caso
                             de que fuese necesario en el futuro.
                         </span>
                     </p>
-                    <input type="checkbox" id="userData">
+                    <input type="checkbox" id="userData" checked>
                 </label>
                 <label>
                     <p>Historial de navegación en la página</p>
-                    <input type="checkbox" id="historyData">
+                    <input type="checkbox" id="historyData" checked>
                 </label>
             </div>
         </section>
@@ -171,11 +181,11 @@
                         <p>Modo desarrollador</p>
                         <input type="checkbox" id="developerMode">
                     </label>
-                    <label class="child">
+                    <label class="child developerMode_child">
                         <p>Habilitar selección</p>
                         <input type="checkbox" id="enableSelection">
                     </label>
-                    <label class="child">
+                    <label class="child developerMode_child">
                         <p>Habilitar click derecho</p>
                         <input type="checkbox" id="enableRightClick">
                     </label>
@@ -188,11 +198,11 @@
                         <p>Modo diseñador</p>
                         <input type="checkbox" id="enableDesignerMode">
                     </label>
-                    <label class="child">
+                    <label class="child enableDesignerMode_child">
                         <p>Mostrar bordes</p>
                         <input type="checkbox" id="enableBorders">
                     </label>
-                    <label class="child">
+                    <label class="child enableDesignerMode_child develop">
                         <p>Forzar modo para teléfono</p>
                         <input type="checkbox" id="enablePhoneMode">
                     </label>
@@ -212,6 +222,18 @@
             </div>
             -->
         </section>
+        <div class="float invisible">
+            <div>
+                <p>Recarga la página para aplicar los cambios</p>
+                <button onclick="window.location.reload()">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19.5 14.98c-.02 0-.03 0-.05.01A3.49 3.49 0 0 0 16 12c-1.4 0-2.6.83-3.16 2.02A2.988 2.988 0 0 0 10 17c0 1.66 1.34 3 3 3l6.5-.02a2.5 2.5 0 0 0 0-5Zm.01 3.02H13c-.55 0-1-.45-1-1s.45-1 1-1h1.25v-.25c0-.97.78-1.75 1.75-1.75s1.75.78 1.75 1.75V17h1.76c.28 0 .5.22.5.5-.01.27-.23.5-.5.5ZM8 4.26v2.09C5.67 7.18 4 9.39 4 12c0 1.77.78 3.34 2 4.44V14h2v6H2v-2h2.73A7.942 7.942 0 0 1 2 12c0-3.73 2.55-6.85 6-7.74ZM18 6h-2.73a7.98 7.98 0 0 1 2.66 5h-2.02c-.23-1.36-.93-2.55-1.91-3.44V10h-2V4h6v2Z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </section>
 </body>
 <script>

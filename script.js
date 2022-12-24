@@ -1,3 +1,27 @@
+var data = {
+    eliminar(ruta) {
+        localStorage.removeItem(`${ruta}`);
+        return localStorage
+    },
+    establecer(ruta, valor) {
+        localStorage.setItem(`${ruta}`, `${valor}`);
+        return console.info(`${ruta} tiene ahora el valor \"${valor}\"`)
+    },
+    existe(ruta) {
+        if (localStorage[`${ruta}`]) return true;
+        return false;
+    },
+    obtener(ruta) {
+        return localStorage.getItem(`${ruta}`);
+    },
+    reset() {
+        localStorage.clear();
+    },
+    table() {
+        return console.table(localStorage)
+    }
+}
+
 const t = 500
 
 function sleep(ms) {
@@ -64,10 +88,32 @@ function fade() {
     }
 }
 
+function aplicarAjustes() {
+    if (data.obtener("settings.chk.enableBorders")=="true"){
+        document.querySelector("body").classList.add("seeBorders")
+    }
+    if (data.obtener("settings.chk.bajosRecursos")=="true"){
+        document.querySelector("body").classList.add("lowSources")
+    }
+    if (data.obtener("settings.chk.enableRightClick")=="true"){
+        document.oncontextmenu = function(){}
+    } else {
+        document.oncontextmenu = function(){return false}
+    }
+    if (data.obtener("settings.chk.enableSelection")=="true"){
+        document.querySelector("body").classList.add("select")
+    }
+}
+
 async function start() {
-    await load()
+    if (data.obtener("settings.chk.loader")=="true" || !data.existe("settings.chk.loader")) {
+        if (data.obtener("settings.chk.loaderEverywhere")=="true" || window.location.href.toString() == window.location.origin.toString()+"/"){
+            await load()
+            document.querySelector("body").removeChild(document.querySelector("body > svg"))
+        }
+    }
+    await aplicarAjustes()
     startRevealAnimations()
     window.addEventListener("scroll", startRevealAnimations);
-    document.querySelector("body").removeChild(document.querySelector("body > svg"))
     document.querySelector("body").classList.remove("locked")
 }

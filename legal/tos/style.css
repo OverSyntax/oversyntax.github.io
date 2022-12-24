@@ -9,11 +9,6 @@ body {
     overflow-x: hidden;
     min-height: 90vh;
     margin: 0px;
-    user-select: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     z-index: -1;
     background-color: #181816;
     padding: 0px;

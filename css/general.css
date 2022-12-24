@@ -1,0 +1,15 @@
+body.seeBorders * {
+    border: 1px solid #00f;
+}
+
+body.lowSources * {
+    transition: none;
+}
+
+body:not(.select) * {
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
