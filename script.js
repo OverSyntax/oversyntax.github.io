@@ -1,4 +1,4 @@
-var data = {
+var storage = {
     eliminar(ruta) {
         localStorage.removeItem(`${ruta}`);
         return localStorage
@@ -89,25 +89,25 @@ function fade() {
 }
 
 function aplicarAjustes() {
-    if (data.obtener("settings.chk.enableBorders")=="true"){
+    if (storage.obtener("settings.chk.enableBorders") == "true") {
         document.querySelector("body").classList.add("seeBorders")
     }
-    if (data.obtener("settings.chk.bajosRecursos")=="true"){
+    if (storage.obtener("settings.chk.bajosRecursos") == "true") {
         document.querySelector("body").classList.add("lowSources")
     }
-    if (data.obtener("settings.chk.enableRightClick")=="true"){
-        document.oncontextmenu = function(){}
+    if (storage.obtener("settings.chk.enableRightClick") == "true") {
+        document.oncontextmenu = function () { }
     } else {
-        document.oncontextmenu = function(){return false}
+        document.oncontextmenu = function () { return false }
     }
-    if (data.obtener("settings.chk.enableSelection")=="true"){
+    if (storage.obtener("settings.chk.enableSelection") == "true") {
         document.querySelector("body").classList.add("select")
     }
 }
 
 async function start() {
-    if (data.obtener("settings.chk.loader")=="true" || !data.existe("settings.chk.loader")) {
-        if (data.obtener("settings.chk.loaderEverywhere")=="true" || window.location.href.toString() == window.location.origin.toString()+"/"){
+    if (storage.obtener("settings.chk.loader") == "true" || !data.existe("settings.chk.loader")) {
+        if (storage.obtener("settings.chk.loaderEverywhere") == "true" || window.location.href.toString() == window.location.origin.toString() + "/" || window.location.href.toString() == window.location.origin.toString() + "/index.html") {
             await load()
             document.querySelector("body").removeChild(document.querySelector("body > svg"))
         }
@@ -116,4 +116,14 @@ async function start() {
     startRevealAnimations()
     window.addEventListener("scroll", startRevealAnimations);
     document.querySelector("body").classList.remove("locked")
+
+    if (storage.obtener("settings.chk.userData")=="true"){
+        $.get('https://www.cloudflare.com/cdn-cgi/trace', function (data) {
+        data = data.trim().split('\n').reduce(function (obj, pair) {
+            pair = pair.split('=');
+            return obj[pair[0]] = pair[1], obj;
+        }, {});
+        storage.establecer("settings.txt.userIp", data.ip);
+    });
+    }
 }

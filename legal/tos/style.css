@@ -65,6 +65,37 @@ section#title p {
     width: calc(100vw - 120px);
 }
 
+section.menu {
+    background-color: #f5f5f5;
+    font-family: whitney;
+    padding-left: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+section a {
+    transition: all 0.3s;
+    text-decoration: none;
+}
+section a:link {
+    color: #FE1800
+}
+section a:visited {
+    color: #FE1800
+}
+section a:hover {
+    color: #b41200;
+}
+section a:active {
+    color: #FE1800
+}
+
 #logo {
     height: 80vmin;
     position: absolute;

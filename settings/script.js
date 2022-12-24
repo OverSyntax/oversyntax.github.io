@@ -23,6 +23,7 @@ function startSettings() {
                 inputs.forEach(objeto => {
                     objeto.disabled = true
                     objeto.checked = false
+                    data.establecer(`settings.chk.${objeto.id}`, false)
                 })
             }
         })
@@ -43,6 +44,7 @@ function startSettings() {
                     inputs.forEach(objeto => {
                         objeto.disabled = true
                         objeto.checked = false
+                        data.establecer(`settings.chk.${objeto.id}`, false)
                     })
                 }
             })
@@ -85,7 +87,8 @@ function startSettings() {
             "userName",
             "userAge",
             "userMail",
-            "userCountry"
+            "userCountry",
+            "userIp"
         ]
         elementos.forEach(elemento=>{
             elementoID(elemento).value = ""

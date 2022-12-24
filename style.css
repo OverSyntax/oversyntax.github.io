@@ -79,6 +79,68 @@ section#title p {
     filter: blur(12px);
 }
 
+section#menu {
+    padding: 120px 60px;
+    background-color: #f5f5f5;
+    position: relative;
+    font-family: whitney;
+    font-size: 40px;
+}
+
+section a {
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+section#menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 50px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+section#menu li {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    background-color: #181818;
+    border-radius: 20px;
+    padding: 20px;
+    height: 150px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-family: whitney;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.3s;
+    box-shadow: 0px 7.5px 5px -1px #000;
+}
+
+section#menu li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 7.5px 20px -1px #000;
+}
+
+section#menu ul li svg {
+    height: 100px;
+    fill: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 0.3s;
+}
+
+section#menu p {
+    margin: 5px 0px;
+    width: 100%;
+    text-align: center;
+}
+
 section#discord {
     position: relative;
     padding: 120px 60px;
@@ -138,6 +200,13 @@ section#discord p {
         font-size: 36px;
         text-align: center;
         width: calc(100vw - 20px);
+    }
+    section#menu ul {
+        gap: 10px
+    }
+    section#menu li {
+        height: 75px;
+        font-size: 18px;
     }
     section#discord {
         position: relative;
