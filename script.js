@@ -106,7 +106,7 @@ function aplicarAjustes() {
 }
 
 async function start() {
-    if (storage.obtener("settings.chk.loader") == "true" || !data.existe("settings.chk.loader")) {
+    if (storage.obtener("settings.chk.loader") == "true" || !storage.existe("settings.chk.loader")) {
         if (storage.obtener("settings.chk.loaderEverywhere") == "true" || window.location.href.toString() == window.location.origin.toString() + "/" || window.location.href.toString() == window.location.origin.toString() + "/index.html") {
             await load()
             document.querySelector("body").removeChild(document.querySelector("body > svg"))
