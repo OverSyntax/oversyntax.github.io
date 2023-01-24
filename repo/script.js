@@ -12,3 +12,12 @@ function fade() {
         reveal.classList.remove("fixed")
     }
 }
+
+function load() {
+    document.querySelector("#closeButton").addEventListener("click", function(){
+        document.querySelector(".specialfix").classList.remove("active")
+    })
+    document.querySelector("#openButton").addEventListener("click", function(){
+        document.querySelector(".specialfix").classList.add("active")
+    })
+}
