@@ -234,6 +234,7 @@ label.searchbar button > svg {
 }
 
 #openButton {
+    cursor: pointer;
     visibility: hidden;
     position: absolute;
     height: 30px;
@@ -416,5 +417,8 @@ label.searchbar button > svg {
     }
     #openButton {
         visibility: visible;
+    }
+    #repos > a > div:not(#openButton) > .image > img {
+        filter: blur(0px);
     }
 }
