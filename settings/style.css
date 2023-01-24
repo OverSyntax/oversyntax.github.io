@@ -73,8 +73,7 @@ section#title p {
     position: absolute;
     left: 40vw;
     top: -15vh;
-    opacity: .5;
-    filter: blur(12px);
+    
 }
 
 section a {
@@ -287,8 +286,7 @@ div.float svg {
         position: absolute;
         left: 0px;
         top: 0px;
-        opacity: .5;
-        filter: blur(12px);
+        
     }
     section#title>div {
         position: relative;
