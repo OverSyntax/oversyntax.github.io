@@ -206,10 +206,9 @@ section#list {
 #openButton {
     visibility: hidden;
     position: absolute;
-    width: calc(100vw - 70px);
+    width: calc(50vw - 70px);
     height: 50px;
-    top: 50px;
-    border: 4px solid black;
+    top: 30px;
     z-index: 700;
     border-radius: 7.5px;
     display: flex;
