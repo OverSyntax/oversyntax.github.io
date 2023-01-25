@@ -21,18 +21,49 @@ function load() {
         document.querySelector(".specialfix").classList.add("active")
     })
     startLabels()
+    filter()
 }
 
 function startLabels() {
     const children = document.querySelector("#etiquetas").children
     for (var i = 0; i < children.length; i++) {
-        if (url.has("code", children[i].innerHTML.toLowerCase())) {
+        if (url.has("label", children[i].innerHTML.toLowerCase())) {
             children[i].classList.add("active")
         }
         children[i].addEventListener("click", function () {
             this.classList.toggle("active")
-            applyFilters()
+            document.getElementById("applyButton").disabled = false
         })
+    }
+}
+
+function filter() {
+    const repos = document.querySelector("#repos").children
+    const labels = url.obtenerData("label")[0].value
+    var count = 0
+    for ( var i = 0;i<repos.length;i++) {
+        if(repos[i].localName == "a") {
+            if (labels.length>0){
+                var show = false
+                var cardvalues = repos[i].attributes["etiquetas"].value.split(";")
+                labels.forEach(label => {
+                    cardvalues.forEach(value => {
+                        if (value==label) show = true
+                    })
+                })
+                repos[i].hidden = !show
+                if (show) count =+ 1
+            } else {
+                repos[i].hidden = false
+                count =+ 1
+            }
+        }
+    }
+    console.log(count)
+    if (count>0) {
+        document.getElementById("nothing").hidden = true  
+    } else {
+        document.getElementById("nothing").hidden = false  
     }
 }
 
@@ -44,13 +75,8 @@ function applyFilters() {
             labels.push(children[i].innerHTML.toLowerCase())
         }
     }
-    const repos = document.querySelector("#repos").children
-    /*
-    for ( var i = 0;i<repos.length;i++) {
-
-    }*/
-    if (labels.length == 0 ) return url.eliminarData("code")
-    return url.establecerData("code", labels)
+    if (labels.length == 0 ) return url.eliminarData("label")
+    return url.establecerData("label", labels)
 }
 
 const url = {

@@ -101,7 +101,7 @@ section a:active {
     position: absolute;
     left: 70vw;
     top: -15vh;
-    
+    opacity: .3;
 }
 
 section#text {
@@ -165,7 +165,6 @@ section#text > * {
         position: absolute;
         left: calc(50vw - 30vh);
         top: 0px;
-        
     }
     section#title>div {
         position: relative;

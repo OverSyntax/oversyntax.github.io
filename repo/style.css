@@ -205,11 +205,26 @@ label.searchbar button > svg {
     color: #fff;
 }
 
+.specialfix > div.botones {
+    margin-top: 35px;
+}
 
+.specialfix > div.botones > button {
+    outline: none;
+    border: none;
+    background-color: #bbb;
+    color: 0;
+    border-radius: 5px;
+    padding: 7.5px;
+    width: 100%;
+    font-weight: bold;
+    transition: all 0.3s;
+}
 
-
-
-
+.specialfix > div.botones > button:enabled {
+    background-color: #FE1800;
+    color: #fff;
+}
 
 
 
@@ -357,6 +372,11 @@ label.searchbar button > svg {
     background-color: #ddd;
 }
 
+#nothing {
+    position: absolute;
+    min-width: 300px;
+}
+
 .nothing {
     overflow: hidden;
     overflow-x: hidden;
@@ -374,7 +394,6 @@ label.searchbar button > svg {
         position: absolute;
         left: 0px;
         top: 0px;
-        
     }
     section#title>div {
         position: relative;

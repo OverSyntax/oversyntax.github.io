@@ -73,7 +73,7 @@ section#title p {
     position: absolute;
     left: 40vw;
     top: -15vh;
-    
+    opacity: .3;
 }
 
 section a {

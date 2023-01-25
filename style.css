@@ -178,7 +178,7 @@ section#discord p {
     position: absolute;
     left: 40vw;
     top: -15vh;
-    
+    opacity: .3;
 }
 
 @media only screen and (max-width: 900px) {
